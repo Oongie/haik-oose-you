@@ -1,6 +1,17 @@
-def main():
-    import flask
-    print("Using flask version:", flask.__version__)
+# A small app following the user guide
+from flask import Flask, url_for
+from markupsafe import escape
 
-if __name__=="__main__":
-    main()
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return "Index Page"
+
+@app.route("/hello")
+def hello_world():
+    return "Hello!"
+
+@app.route("/user/<username>")
+def show_uer_profile(username):
+    return "User %s" % escape(username)
