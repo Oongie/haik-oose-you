@@ -9,6 +9,8 @@ instance/
 .coverage
 htmlcov/
 
+.vscode/
+
 dist/
 build/
 *.egg-info/
