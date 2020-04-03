@@ -50,7 +50,7 @@ def login():
         error = None
         user = db.execute(
             "SELECT * FROM user WHERE username = ?", (username,)
-        )        
+        ).fetchone()        
 
         # Validate input
         if user is None:
