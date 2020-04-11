@@ -1,4 +1,4 @@
 {% extends 'base.html' %}
 {% block result %}
-<div class="haiku-area"><p>post worked</p></div>
+<div class="haiku-area"><p style="white-space: pre-wrap">{{ session["poem"] }}</p></div>
 {% endblock %}
