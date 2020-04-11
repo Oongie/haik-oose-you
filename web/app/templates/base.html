@@ -5,27 +5,39 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
 </head>
 <body>
-    {% block body %}
+    {% block header %}
     <div class="header">
         <h1>Haik-oose-you.</h1>
         <h2>An AI powered haiku helper.</h2>
     </div>
-    <div>
-    <p class="intro">
-        Tired of poet's block? Can't count to 17? Let our state of the art machine learning algorithms write a pleasing haiku for you. To begin, simply enter your pitiful attempt in the box below.
-    </p>
-    </div>
-    <div class="haiku-area">
-        <form method="post">
-            <div>
-            <textarea name="poem", id="poem", autofocus=true, rows=3, cols=50, placeholder="Your haiku here...">{{ request.form["poem"] }}</textarea>
-            </div>
-            <div>
-            <input type="submit", value="Check", class="button">
-            </div>
-        </form>
-    </div>
     {% endblock %}
-    {% block result %}{% endblock %}
+    <div class="content">
+            <div class="col-left">
+                <div class="row">
+                <p>Tired of poet's block? Can't count to 17? 
+                    Let our state of the art machine learning algorithms write a pleasing haiku for you. 
+                    To begin, simply enter your pitiful attempt in the box below.</p>
+                </div>
+                <div class="row">
+                    <form method="post">
+                        <textarea name="poem", id="poem", autofocus=true, rows=3, cols=50, placeholder="Your haiku here...">{{ request.form["poem"] }}</textarea>
+                        <input type="submit", value="Check", class="button">
+                    </form>
+                </div>
+            </div>
+            <div class="col-right">    
+                <div class="row">        
+                <p>
+                    Lorem Ipsum ha!</br>
+                    This is a placeholder line!</br>
+                    One more to finish.</br>
+                    </br>
+                </p>
+                </div>
+                <div class="row">
+                {% block result %}{% endblock %}
+                </div>
+            </div>
+    </div>
 </body>
 </html>
