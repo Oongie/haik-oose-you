@@ -1,12 +1,65 @@
-* {margin: 0%; padding: 0%; border: 0%; outline: 0%; background: whitesmoke; box-sizing: border-box;}
-body {margin: 0% auto;}
-.header {background-color: darkslategray; color: white; width: 100%; margin: 0% auto; padding: 1em 10% 1em 10%;}
-.content {width: 100%; margin: 0%; padding: 1em 10% 1em 10%;}
-/*.columns {column-count: 2; margin: 0em;}*/
-.col-left {float: left; width: 49%; margin-right: 5px;}
-.col-right {float: right; width: 49%; margin-left: 5px;}
-.row {margin-bottom: 1em;}
-h1, h2 {font-family: Helvetica; background-color: darkslategray; margin-bottom: 5px;}
-p {font-family: 'Courier New', Courier, monospace; font-size: 1em;}
-textarea {resize: none; width: 100%; font-family: 'Courier New', Courier, monospace; font-size: 1em; border-radius: 5px; outline: none; padding: 0.5em;}
-.button {background-color: darkslategray; border: none; color: white; font-family: 'Courier New', Courier, monospace; width: 50px; height: 30px;}
+* {
+    margin: 0%; 
+    padding: 0%; 
+    border: 0%; 
+    outline: 0%; 
+    background: whitesmoke; 
+    box-sizing: border-box;
+}
+body {
+    margin: 0% auto;
+}
+.header {
+    background-color: darkslategray; 
+    color: white; 
+    width: 100%;
+    margin: 0% auto; 
+    padding: 1em 10% 1em 10%;
+}
+.content {
+    width: 100%;
+    margin: 0%; 
+    padding: 1em 10% 1em 10%;
+    display: grid;
+    grid-template-columns: 47.5% 47.5%;
+    grid-gap: 5%;
+}
+.box {
+    padding: 5px;
+}
+h1, h2 {
+    font-family: Helvetica; 
+    background-color: darkslategray;
+     margin-bottom: 5px;
+}
+p {
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 1em;
+}
+textarea {
+    resize: none; 
+    width: 100%; 
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 1em; 
+    border-radius: 5px; 
+    outline: none; 
+    padding: 0.5em;
+}
+.button {
+    background-color: darkslategray; 
+    border: none; 
+    color: white; 
+    font-family: 'Courier New', Courier, monospace; 
+    width: 50px; 
+    height: 30px;
+}
+.poem {
+    float: left; 
+    width: 80%; 
+    white-space: pre-wrap
+}
+.syllables {
+    float: left;
+    width: 2em;
+    white-space: pre-wrap
+}

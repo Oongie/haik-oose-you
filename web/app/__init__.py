@@ -3,6 +3,7 @@ import os
 from flask import Flask, render_template, request, g
 
 from app.db import get_db, init_app_db
+from . import api
 
 
 def create_app(test_config=None):
@@ -36,11 +37,17 @@ def create_app(test_config=None):
 
         if request.method == "POST":
             poem = request.form["poem"]
+
+            # Record the poem attempt entered
             db.execute("INSERT INTO fact_poem (poem) VALUES (?)", (poem,))
             db.commit()
 
-            g.poem = poem
+            # Pass the poem to the counting API
+            syllables = api.get_syllables(poem=poem)
+            syllables_text = "\n".join([str(s) for s in syllables])
+            g.syllables = syllables_text
 
+            g.poem = poem # Make available to Jinja, might be a better way
             return render_template("home.html")
 
         return render_template("home.html")

@@ -12,32 +12,22 @@
     </div>
     {% endblock %}
     <div class="content">
-            <div class="col-left">
-                <div class="row">
-                <p>Tired of poet's block? Can't count to 17? 
-                    Let our state of the art machine learning algorithms write a pleasing haiku for you. 
-                    To begin, simply enter your pitiful attempt in the box below.</p>
-                </div>
-                <div class="row">
-                    <form method="post">
-                        <textarea name="poem", id="poem", autofocus=true, rows=3, cols=50, placeholder="Your haiku here...">{{ request.form["poem"] }}</textarea>
-                        <input type="submit", value="Check", class="button">
-                    </form>
-                </div>
-            </div>
-            <div class="col-right">    
-                <div class="row">        
-                <p>
-                    Lorem Ipsum ha!</br>
-                    This is a placeholder line!</br>
-                    One more to finish.</br>
-                    </br>
-                </p>
-                </div>
-                <div class="row">
-                    <p style="white-space: pre-wrap">{{ g.poem }}</p>
-                </div>
-            </div>
+        <div class="box intro">
+            <p>Tired of poet's block? Can't count to 17? 
+            Let our state of the art machine learning algorithms write a pleasing haiku for you. 
+            To begin, simply enter your pitiful attempt in the box below.</p>
+        </div>
+        <div class="box placeholder"></div>
+        <div class="box entry">
+            <form method="post">
+                <textarea name="poem", id="poem", autofocus=true, rows=3, cols=50, placeholder="Your haiku here...">{{ request.form["poem"] }}</textarea>
+                <input type="submit", value="Check", class="button">
+            </form>
+        </div>  
+        <div class="box result">
+            <p class="syllables">{{ g.syllables }}</p>
+            <p class="poem" style="white-space: pre-wrap">{{ g.poem }}</p>
+        </div>
     </div>
 </body>
 </html>
